@@ -1,0 +1,21 @@
+{
+  "name": "buepro/typo3-pizpalue-distribution-base",
+  "description" : "TYPO3 CMS pizpalue distribution base.",
+  "license": "GPL-2.0-or-later",
+  "config": {
+    "platform": {
+      "php": "7.2"
+    },
+    "sort-packages": true
+  },
+  "prefer-stable": true,
+  "require": {
+    "typo3/cms-base-distribution": "^10.4.1",
+    "buepro/typo3-pizpalue-distribution": "^1.0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Buepro\\UserPizpalue\\": "public/typo3conf/ext/user_pizpalue/Classes"
+    }
+  }
+}
