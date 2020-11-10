@@ -5,17 +5,17 @@ This composer package serves as a base to start new [typo3](https://typo3.org) p
 
 ## Quick start
 
-1. Get packages
+1.  Get packages
     ```
     composer create-project buepro/typo3-pizpalue-distribution-base pizpalue 
     ```
 
-1. Enter project directory
+1.  Enter project directory
     ```
     cd pizpalue
     ```
 
-1. Setup TYPO3
+1.  Setup TYPO3
     ```
     php vendor/bin/typo3cms install:setup \
         --no-interaction \
@@ -30,18 +30,31 @@ This composer package serves as a base to start new [typo3](https://typo3.org) p
         --site-setup-type=site
     ```
 
-1. Reactivate extensions
+1.  Adjust `composer.json`
+
+    To have more control maintaining the site the composer configuration might be adjusted according the 
+    actual requirements. For this replace `"typo3/cms-base-distribution": "^10.4.1"` with the required 
+    packages:
     ```
-    vendor/bin/typo3cms extension:setupactive
-    vendor/bin/typo3cms extension:deactivate user_pizpalue
-    vendor/bin/typo3cms extension:deactivate pizpalue_distribution
-    vendor/bin/typo3cms extension:deactivate pizpalue
-    vendor/bin/typo3cms extension:deactivate bootstrap_package
-    vendor/bin/typo3cms extension:activate bootstrap_package
-    vendor/bin/typo3cms extension:activate pizpalue
-    vendor/bin/typo3cms extension:activate pizpalue_distribution
-    vendor/bin/typo3cms extension:activate user_pizpalue
-    vendor/bin/typo3cms extension:activate flux
-    vendor/bin/typo3cms extension:activate flux_elements
-    vendor/bin/typo3cms cache:flush
+    "typo3/cms-recycler": "^10.4",
+    "typo3/cms-indexed-search": "^10.4",
+    "typo3/cms-lowlevel": "^10.4",
+    "buepro/typo3-pizpalue": "^11.4.1",
+    "buepro/typo3-container-elements": "^1.0.0",
+    "georgringer/news": "^8.5.0",
+    "georgringer/eventnews": "^4.0.0",
+    "friendsoftypo3/tt-address": "^5.2.0",
+    "svewap/ws-flexslider": "^1.5.14",
+    "buepro/typo3-timelog": "^1.6.0"
     ```
+    > NOTE: Just add the needed packages. In many projects just `buepro/typo3-pizpalue` and 
+    > `buepro/typo3-container-elements` are used.
+   
+    After modifying the composer configuration update the installation:
+    ```
+    composer update
+    vendor/bin/typo3cms database:updateschema
+    vendor/bin/typo3cms install:generatepackagestates
+    ```
+    > NOTE: `database:updateschema` might be called with `"destructive""` to rename/delete unused
+    > tables and fields.
