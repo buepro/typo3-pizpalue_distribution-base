@@ -33,12 +33,13 @@ This composer package serves as a base to start new [typo3](https://typo3.org) p
 1.  Adjust `composer.json`
 
     To have more control maintaining the site the composer configuration might be adjusted according the 
-    actual requirements. For this replace `"typo3/cms-base-distribution": "^10.4.1"` with the required 
+    actual requirements. For this replace `"buepro/typo3-pizpalue-distribution": "^2.0.0"` with the required 
     packages:
     ```
     "typo3/cms-recycler": "^10.4",
     "typo3/cms-indexed-search": "^10.4",
     "typo3/cms-lowlevel": "^10.4",
+    "typo3/cms-redirects": "^10.4",
     "buepro/typo3-pizpalue": "^11.4.1",
     "buepro/typo3-container-elements": "^1.0.0",
     "georgringer/news": "^8.5.0",
