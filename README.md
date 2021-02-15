@@ -54,8 +54,8 @@ This composer package serves as a base to start new [typo3](https://typo3.org) p
     After modifying the composer configuration update the installation:
     ```
     composer update
-    vendor/bin/typo3cms database:updateschema
     vendor/bin/typo3cms install:generatepackagestates
+    vendor/bin/typo3cms database:updateschema
     ```
     > NOTE: `database:updateschema` might be called with `"destructive""` to rename/delete unused
     > tables and fields.
