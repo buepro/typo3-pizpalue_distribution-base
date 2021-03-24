@@ -51,11 +51,7 @@ This composer package serves as a base to start new [typo3](https://typo3.org) p
     > NOTE: Just add the needed packages. In many projects just `buepro/typo3-pizpalue` and 
     > `buepro/typo3-container-elements` are used.
    
-    After modifying the composer configuration update the installation:
+    After modifying the composer configuration finalize the installation:
     ```
-    composer update
-    vendor/bin/typo3cms install:generatepackagestates
-    vendor/bin/typo3cms database:updateschema
+    composer finalize-installation
     ```
-    > NOTE: `database:updateschema` might be called with `"destructive""` to rename/delete unused
-    > tables and fields.

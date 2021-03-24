@@ -17,5 +17,46 @@
     "psr-4": {
       "Buepro\\UserPizpalue\\": "public/typo3conf/ext/user_pizpalue/Classes"
     }
+  },
+  "scripts": {
+    "t3-be-lock": [
+      "./vendor/bin/typo3cms backend:lock"
+    ],
+    "t3-be-unlock": [
+      "./vendor/bin/typo3cms backend:unlock"
+    ],
+    "t3-db-export": [
+      "./vendor/bin/typo3cms database:export -c Default -e 'cf_*' -e 'cache_*' -e '[bf]e_sessions' -e sys_log | gzip -c > $BACKUPDIR/update.sql.gz"
+    ],
+    "t3-db-update": [
+      "./vendor/bin/typo3cms database:updateschema"
+    ],
+    "t3-cache-flush": [
+      "./vendor/bin/typo3cms cache:flush"
+    ],
+    "t3-language-update": [
+      "./vendor/bin/typo3cms language:update"
+    ],
+    "finalize-installation": [
+      "composer update",
+      "./vendor/bin/typo3cms install:generatepackagestates",
+      "@t3-db-update"
+    ],
+    "site-update-proc": [
+      "@t3-be-lock",
+      "cp composer.json $BACKUPDIR/update_composer.json",
+      "cp composer.lock $BACKUPDIR/update_composer.lock",
+      "@t3-db-export",
+      "composer update",
+      "@t3-db-update",
+      "@t3-language-update",
+      "@t3-cache-flush",
+      "@t3-be-unlock"
+    ],
+    "site-update": [
+      "@putenv BACKUPDIR=./var/backup/site",
+      "mkdir -p $BACKUPDIR",
+      "exec 1>$BACKUPDIR/update.log 2>$BACKUPDIR/update_error.log && composer site-update-proc"
+    ]
   }
 }
