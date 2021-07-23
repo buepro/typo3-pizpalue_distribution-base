@@ -5,17 +5,17 @@ This composer package serves as a base to start new [typo3](https://typo3.org) p
 
 ## Quick start
 
-1.  Get packages
+1.  **Get packages**
     ```
     composer create-project buepro/typo3-pizpalue-distribution-base pizpalue 
     ```
 
-1.  Enter project directory
+1.  **Enter project directory**
     ```
     cd pizpalue
     ```
 
-1.  Setup TYPO3
+1.  **Setup TYPO3**
     ```
     php vendor/bin/typo3cms install:setup \
         --no-interaction \
@@ -30,7 +30,7 @@ This composer package serves as a base to start new [typo3](https://typo3.org) p
         --site-setup-type=site
     ```
 
-1.  Review `composer.json`
+1.  **Review `composer.json`**
 
     1.  Enable platform check
     
@@ -61,9 +61,14 @@ This composer package serves as a base to start new [typo3](https://typo3.org) p
         > NOTE: Just add the needed packages. In many projects just `buepro/typo3-pizpalue` and 
         `buepro/typo3-container-elements` are used.
    
-1.  Finalize installation
+1.  **Finalize installation**
     
     After modifying the composer configuration finalize the installation:
     ```
     composer finalize-installation
     ```
+
+1.  **Update root template record**
+    Not loaded extensions might still have their static template referenced in the root template record.
+    This can result in incorrect rendering issues. To update the root template record open and save the template
+    record on the root page.
