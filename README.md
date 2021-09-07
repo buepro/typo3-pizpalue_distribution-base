@@ -3,21 +3,21 @@
 This composer package serves as a base to start new [typo3](https://typo3.org) projects based on 
 [pizpalue distribution](https://extensions.typo3.org/extension/pizpalue_distribution/).
 
-It uses pizpalue version 12 (bootstrap 12) and TYPO3 version 10.
+It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 10.
 
 ## Quick start
 
-1.  **Get packages**
+1. **Get packages**
     ```
     composer create-project -s dev buepro/typo3-pizpalue-distribution-base pizpalue ^2.2
     ```
 
-1.  **Enter project directory**
+2. **Enter project directory**
     ```
     cd pizpalue
     ```
 
-1.  **Setup TYPO3**
+3. **Setup TYPO3**
     ```
     php vendor/bin/typo3cms install:setup \
     --no-interaction \
@@ -33,7 +33,7 @@ It uses pizpalue version 12 (bootstrap 12) and TYPO3 version 10.
     --web-server-config="apache"
     ```
 
-1.  **Review `composer.json`**
+4. **Review `composer.json`**
 
     1.  Enable platform check
     
