@@ -9,11 +9,10 @@
     "platform-check": false,
     "sort-packages": true
   },
+  "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "buepro/typo3-pizpalue-distribution": "^v2.0.3",
-    "helhum/typo3-console": "^v6.5.0",
-    "typo3/cms-base-distribution": "^10.4.1"
+    "buepro/typo3-pizpalue-distribution": "^3.0.0"
   },
   "autoload": {
     "psr-4": {
@@ -60,5 +59,10 @@
       "mkdir -p $BACKUPDIR",
       "exec 1>$BACKUPDIR/update.log 2>$BACKUPDIR/update_error.log && composer site-update-proc"
     ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "3.0.x-dev"
+    }
   }
 }
