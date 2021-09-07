@@ -3,11 +3,13 @@
 This composer package serves as a base to start new [typo3](https://typo3.org) projects based on 
 [pizpalue distribution](https://extensions.typo3.org/extension/pizpalue_distribution/).
 
+It uses pizpalue version 12 (bootstrap 12) and TYPO3 version 10.
+
 ## Quick start
 
 1.  **Get packages**
     ```
-    composer create-project buepro/typo3-pizpalue-distribution-base pizpalue 
+    composer create-project -s dev buepro/typo3-pizpalue-distribution-base pizpalue ^2.2
     ```
 
 1.  **Enter project directory**
@@ -18,16 +20,17 @@ This composer package serves as a base to start new [typo3](https://typo3.org) p
 1.  **Setup TYPO3**
     ```
     php vendor/bin/typo3cms install:setup \
-        --no-interaction \
-        --database-user-name=typo3 \
-        --database-user-password=typo3 \
-        --database-host-name=127.0.0.1 \
-        --database-port=3306 \
-        --database-name=typo3 \
-        --use-existing-database \
-        --admin-user-name=admin \
-        --admin-password=password \
-        --site-setup-type=site
+    --no-interaction \
+    --use-existing-database \
+    --database-host-name="127.0.0.1" \
+    --database-port="3306" \
+    --database-name="db" \
+    --database-user-name="db" \
+    --database-user-password="db" \
+    --admin-user-name="admin" \
+    --admin-password="password" \
+    --site-name="Pizpalue site" \
+    --web-server-config="apache"
     ```
 
 1.  **Review `composer.json`**
