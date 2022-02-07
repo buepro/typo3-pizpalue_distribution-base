@@ -3,6 +3,8 @@
 This composer package serves as a base to start new [typo3](https://typo3.org) projects based on 
 [pizpalue distribution](https://extensions.typo3.org/extension/pizpalue_distribution/).
 
+It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
+
 ## Quick start
 
 1.  **Get packages**
