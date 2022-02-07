@@ -24,6 +24,14 @@
     }
   },
   "scripts": {
+    "finalize-installation": [
+      "composer update",
+      "./vendor/bin/typo3cms install:generatepackagestates",
+      "@t3-db-update"
+    ],
+    "post-autoload-dump": [
+      "@typo3-cms-scripts"
+    ],
     "t3-be-lock": [
       "./vendor/bin/typo3cms backend:lock"
     ],
@@ -42,10 +50,8 @@
     "t3-language-update": [
       "./vendor/bin/typo3cms language:update"
     ],
-    "finalize-installation": [
-      "composer update",
-      "./vendor/bin/typo3cms install:generatepackagestates",
-      "@t3-db-update"
+    "typo3-cms-scripts": [
+      "typo3cms install:fixfolderstructure"
     ],
     "site-update-proc": [
       "@t3-be-lock",
