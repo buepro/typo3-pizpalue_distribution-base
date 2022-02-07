@@ -18,11 +18,6 @@
   "require": {
     "buepro/typo3-pizpalue-distribution": "^3.0.0"
   },
-  "autoload": {
-    "psr-4": {
-      "Buepro\\UserPizpalue\\": "public/typo3conf/ext/user_pizpalue/Classes"
-    }
-  },
   "scripts": {
     "finalize-installation": [
       "composer update",
