@@ -49,15 +49,15 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
         packages:
         ```
         "buepro/typo3-container-elements": "^3.0.0",
-        "buepro/typo3-pizpalue": "^12.0.0",
-        "buepro/typo3-timelog": "^1.7.0",
-        "friendsoftypo3/tt-address": "^5.2.1 || dev-master",
-        "georgringer/news": "^8.5.2 || dev-master",
-        "typo3/cms-base-distribution": "^11.3.0",
-        "typo3/cms-indexed-search": "^11.3.0",
-        "typo3/cms-lowlevel": "^11.3.0",
-        "typo3/cms-recycler": "^11.3.0",
-        "typo3/cms-redirects": "^11.3.0"
+		"buepro/typo3-pizpalue": "^12.0.0",
+		"buepro/typo3-user-pizpalue": "^2.0.0",
+		"georgringer/news": "^9.1.0",
+		"typo3/cms-base-distribution": "^11.5",
+		"typo3/cms-core": "^11.5",
+		"typo3/cms-indexed-search": "^11.5",
+		"typo3/cms-lowlevel": "^11.5",
+		"typo3/cms-recycler": "^11.5",
+		"typo3/cms-redirects": "^11.5"
         ```
         > NOTE: Just add the needed packages. In many projects just `buepro/typo3-pizpalue` and 
         `buepro/typo3-container-elements` are used.
