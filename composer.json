@@ -7,7 +7,11 @@
       "php": "7.4"
     },
     "platform-check": false,
-    "sort-packages": true
+    "sort-packages": true,
+    "allow-plugins": {
+      "typo3/cms-composer-installers": true,
+      "typo3/class-alias-loader": true
+    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
