@@ -12,9 +12,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "buepro/typo3-pizpalue-distribution": "^2.1.0",
-    "buepro/typo3-pizpalue": "^12.0.0",
-    "helhum/typo3-console": "^v6.5.0"
+    "buepro/typo3-pizpalue-distribution": "^2.1.0"
   },
   "autoload": {
     "psr-4": {
