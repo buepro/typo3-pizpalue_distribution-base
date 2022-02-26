@@ -1,7 +1,7 @@
 # Pizpalue distribution base
 
-This composer package serves as a base to start new [typo3](https://typo3.org) projects based on 
-[pizpalue distribution](https://extensions.typo3.org/extension/pizpalue_distribution/).
+This composer package serves as a base to start new [typo3](https://typo3.org) projects based on TYPO3 10 LTS 
+and the [pizpalue distribution](https://extensions.typo3.org/extension/pizpalue_distribution/).
 
 It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 10.
 
@@ -9,7 +9,7 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 10.
 
 1. **Get packages**
     ```
-    composer create-project -s dev buepro/typo3-pizpalue-distribution-base pizpalue ^2.2
+    composer create-project buepro/typo3-pizpalue-distribution-base pizpalue ^2.1
     ```
 
 2. **Enter project directory**
@@ -49,17 +49,18 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 10.
         packages:
         ```
         "buepro/typo3-bookmark-pages": "^2.0.1",
-        "buepro/typo3-container-elements": "^2.1.0",
-        "buepro/typo3-pizpalue": "^11.6.3",
+        "buepro/typo3-container-elements": "^3.0.0",
+        "buepro/typo3-pizpalue": "~12.2.0",
         "buepro/typo3-timelog": "^1.6.0",
-        "friendsoftypo3/tt-address": "^5.2.0",
-        "georgringer/eventnews": "^4.0.0",
-        "georgringer/news": "^8.5.0",
-        "svewap/ws-flexslider": "^1.5.14",
-        "typo3/cms-recycler": "^10.4",
-        "typo3/cms-indexed-search": "^10.4",
-        "typo3/cms-lowlevel": "^10.4",
-        "typo3/cms-redirects": "^10.4"
+        "friendsoftypo3/tt-address": "^6.0.1",
+        "georgringer/eventnews": "^5.0.0",
+        "georgringer/news": "^9.2.0",
+        "svewap/ws-flexslider": "^1.5",
+        "typo3/cms-base-distribution": "^10.4.3",
+        "typo3/cms-indexed-search": "^10.4.20",
+        "typo3/cms-lowlevel": "^10.4.20",
+        "typo3/cms-recycler": "^10.4.20",
+        "typo3/cms-redirects": "^10.4.20"
         ```
         > NOTE: Just add the needed packages. In many projects just `buepro/typo3-pizpalue` and 
         `buepro/typo3-container-elements` are used.
