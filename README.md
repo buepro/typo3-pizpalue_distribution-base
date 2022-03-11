@@ -61,6 +61,12 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
       > NOTE: Just add the needed packages. In many projects just `buepro/typo3-pizpalue` and
       `buepro/typo3-container-elements` are used.
 
+      > NOTE: In case the extension `eventnews` is used the site package might need to have a dependency injection
+      > configured. [See eventnews issue 132](https://github.com/georgringer/eventnews/issues/132#issuecomment-1051920269).
+      > More information can be found in the
+      > [pizpalue documentation](https://docs.typo3.org/p/buepro/typo3-pizpalue/main/en-us/Administration/Extensions/Eventnews.html)
+      > (release dependent).
+
    3. Add repository for site package
 
       ```
