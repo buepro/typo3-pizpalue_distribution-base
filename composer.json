@@ -16,7 +16,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "buepro/typo3-pizpalue-distribution": "^3.0.0"
+    "buepro/typo3-pizpalue-distribution": "dev-master"
   },
   "scripts": {
     "finalize-installation": [

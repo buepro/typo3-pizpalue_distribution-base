@@ -48,9 +48,11 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
       requirements. For this replace `"buepro/typo3-pizpalue-distribution": "^3.0.0"` with the required packages:
       ```
       "buepro/typo3-container-elements": "^3.0.0",
-      "buepro/typo3-pizpalue": "^12.0.0",
+      "buepro/typo3-pizpalue": "~12.4.0",
       "buepro/typo3-user-pizpalue": "^2.0.0",
+      "friendsoftypo3/tt-address": "^6.0.1",
       "georgringer/news": "^9.1.0",
+      "georgringer/eventnews": "5.0.0",
       "typo3/cms-base-distribution": "^11.5",
       "typo3/cms-core": "^11.5",
       "typo3/cms-indexed-search": "^11.5",
