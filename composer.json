@@ -9,10 +9,10 @@
     },
     "sort-packages": true
   },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "buepro/typo3-pizpalue-distribution": "^3.1.0"
+    "buepro/typo3-pizpalue-distribution": "dev-main"
   },
   "scripts": {
     "finalize-installation": [
@@ -62,7 +62,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-main": "3.1.x-dev"
+      "dev-main": "3.2.x-dev"
     }
   }
 }
