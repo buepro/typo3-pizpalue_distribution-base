@@ -7,17 +7,23 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
 
 ## Quick start
 
-1. **Get packages**
+1. **Check environment**
+
+   Make sure the PHP version in the shell corresponds to the PHP version used for running
+   the website.
+
+
+3. **Get packages**
    ```
    composer create-project buepro/typo3-pizpalue-distribution-base pizpalue
    ```
 
-2. **Enter project directory**
+4. **Enter project directory**
    ```
    cd pizpalue
    ```
 
-3. **Setup TYPO3**
+5. **Setup TYPO3**
    ```
    php vendor/bin/typo3cms install:setup \
    --no-interaction \
@@ -33,16 +39,9 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
    --web-server-config="apache"
    ```
 
-4. **Review `composer.json`**
+6. **Review `composer.json`**
 
-   1. Enable platform check
-
-      Depending on the hosting environment the platform check might be enabled:
-      ```
-      "platform-check": true,
-      ```
-
-   2. Define packages
+   1. Define packages
 
       To have more control maintaining the site the composer configuration might be adjusted according the actual
       requirements. For this replace `"buepro/typo3-pizpalue-distribution": "^3.1.0"` with the required packages:
@@ -69,7 +68,7 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
       > [pizpalue documentation](https://docs.typo3.org/p/buepro/typo3-pizpalue/main/en-us/Administration/Extensions/Eventnews.html)
       > (release dependent).
 
-   3. Add repository for site package
+   2. Add repository for site package
 
       ```
       "repositories": [
@@ -80,13 +79,13 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
       ],
       ```
 
-6. **Finalize installation**
+7. **Finalize installation**
 
    After modifying the composer configuration finalize the installation:
    ```
    composer finalize-installation
    ```
 
-7. **Update root template record**
+8. **Update root template record**
    Not loaded extensions might still have their static template referenced in the root template record. This can result
    in incorrect rendering issues. To update the root template record open and save the template record on the root page.
