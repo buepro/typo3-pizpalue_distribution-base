@@ -44,7 +44,8 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
    1. Define packages
 
       To have more control maintaining the site the composer configuration might be adjusted according the actual
-      requirements. For this replace `"buepro/typo3-pizpalue-distribution": "^3.1.0"` with the required packages:
+      requirements. For this replace the dependency from `"buepro/typo3-pizpalue-distribution"` with the required
+      packages:
       ```
       "buepro/typo3-container-elements": "^3.0.0",
       "buepro/typo3-easyconf": "^1.0.1",
