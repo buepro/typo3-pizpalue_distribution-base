@@ -15,6 +15,20 @@
     "buepro/typo3-pizpalue-distribution": "~3.3.0"
   },
   "scripts": {
+    "core-update-proc": [
+      "@t3-be-lock",
+      "cp composer.json $BACKUPDIR/update_composer.json",
+      "cp composer.lock $BACKUPDIR/update_composer.lock",
+      "@t3-db-export",
+      "composer u -W 'typo3/*'",
+      "@t3-refindex-update",
+      "@t3-be-unlock"
+    ],
+    "core-update": [
+      "@putenv BACKUPDIR=./var/backup/site",
+      "mkdir -p $BACKUPDIR",
+      "exec 1>$BACKUPDIR/update.log 2>$BACKUPDIR/update_error.log && composer core-update-proc"
+    ],
     "finalize-installation": [
       "composer update",
       "@t3-db-update"
@@ -40,6 +54,9 @@
     "t3-language-update": [
       "./vendor/bin/typo3cms language:update"
     ],
+    "t3-refindex-update": [
+		"./vendor/bin/typo3 referenceindex:update"
+	],
     "typo3-cms-scripts": [
       "typo3cms install:fixfolderstructure"
     ],
@@ -51,6 +68,7 @@
       "composer update",
       "@t3-db-update",
       "@t3-language-update",
+	    "@t3-refindex-update",
       "@t3-cache-flush",
       "@t3-be-unlock"
     ],

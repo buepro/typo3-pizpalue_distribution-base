@@ -12,34 +12,28 @@ indent_size = 4
 insert_final_newline = true
 trim_trailing_whitespace = true
 
+# TS/JS-Files
+[*.{ts,js}]
+indent_size = 2
+
 # JSON-Files
 [*.json]
-indent_style = tab
-
-# ReST-Files
-[*.rst]
-indent_size = 3
-max_line_length = 80
-
-# YML-Files
-[*.{yml,yaml}]
 indent_size = 2
 
-# package.json
-[package.json]
+# YAML-Files
+[*.{yaml,yml}]
 indent_size = 2
 
-#*** XLF-Files
-[*.xlf]
-indent_style = tab
-
-#*** SQL-Files
-[*.sql]
-indent_style = tab
-indent_size = 2
-
-# neon-Files
+# NEON-Files
 [*.neon]
+indent_size = 2
+
+# TypoScript
+[*.{typoscript,tsconfig}]
+indent_size = 2
+
+# XLF-Files
+[*.xlf]
 indent_style = tab
 
 # .htaccess

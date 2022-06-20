@@ -7,23 +7,21 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
 
 ## Quick start
 
-1. **Check environment**
+1. **Check shell PHP version**
 
-   Make sure the PHP version in the shell corresponds to the PHP version used for running
-   the website.
+   Ensure that the PHP version from the shell is compatible with your TYPO3 version.
 
-
-3. **Get packages**
+2. **Get packages**
    ```
    composer create-project buepro/typo3-pizpalue-distribution-base pizpalue
    ```
 
-4. **Enter project directory**
+3. **Enter project directory**
    ```
    cd pizpalue
    ```
 
-5. **Setup TYPO3**
+4. **Setup TYPO3**
    ```
    php vendor/bin/typo3cms install:setup \
    --no-interaction \
@@ -39,7 +37,7 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
    --web-server-config="apache"
    ```
 
-6. **Review `composer.json`**
+5. **Review `composer.json`**
 
    1. Define packages
 
@@ -72,7 +70,6 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
       > (release dependent).
 
    2. Add repository for site package
-
       ```
       "repositories": [
          {
@@ -82,13 +79,34 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
       ],
       ```
 
-7. **Finalize installation**
+   3. **Check PHP configuration**
+
+      Make sure the PHP version used in the shell and for cron jobs corresponds to the PHP version used for running the
+      website. In case they  differ you might need to add a platform configuration to `composer.json`. A possible
+      platform configuration could look as following:
+      ```
+      "config": {
+        "platform": {
+          "php": "8.0.19"
+        }
+      }
+      ```
+
+6. **Finalize installation**
 
    After modifying the composer configuration finalize the installation:
    ```
    composer finalize-installation
    ```
 
-8. **Update root template record**
+7. **Update root template record**
+
    Not loaded extensions might still have their static template referenced in the root template record. This can result
    in incorrect rendering issues. To update the root template record open and save the template record on the root page.
+
+8. **Update the core regularly**
+
+   To keep the core up to date a cron job might be defined. A possible command could be as following:
+   ```
+   cd ~/httpdocs/pizpalue && composer core-update
+   ```
