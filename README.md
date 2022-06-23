@@ -11,6 +11,7 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
 
    Ensure that the PHP version from the shell is compatible with your TYPO3 version.
 
+
 2. **Get packages**
    ```
    composer create-project buepro/typo3-pizpalue-distribution-base pizpalue
@@ -34,10 +35,17 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
    --admin-user-name="admin" \
    --admin-password="password" \
    --site-name="Pizpalue site" \
-   --web-server-config="apache"
+   --web-server-config="apache" \
+   --skip-extension-setup
+   ```
+   > Extension setup is skipped due to a bug in the package `helhum/typo3-console`.
+
+5. **Setup extensions**
+   ```
+   vendor/bin/typo3 extension:setup
    ```
 
-5. **Review `composer.json`**
+6. **Review `composer.json`**
 
    1. Define packages
 
@@ -47,7 +55,7 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
       ```
       "buepro/typo3-container-elements": "^3.0.0",
       "buepro/typo3-easyconf": "^1.0.1",
-      "buepro/typo3-pizpalue": "~12.5.0",
+      "buepro/typo3-pizpalue": "~12.6.0",
       "buepro/typo3-timelog": "^1.7.0",
       "buepro/typo3-user-pizpalue": "^2.2.0",
       "friendsoftypo3/tt-address": "^6.0.1",
@@ -62,12 +70,6 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
       ```
       > NOTE: Just add the needed packages. In many projects just `buepro/typo3-pizpalue` and
       `buepro/typo3-container-elements` are used.
-
-      > NOTE: In case the extension `eventnews` is used the site package might need to have a dependency injection
-      > configured. [See eventnews issue 132](https://github.com/georgringer/eventnews/issues/132#issuecomment-1051920269).
-      > More information can be found in the
-      > [pizpalue documentation](https://docs.typo3.org/p/buepro/typo3-pizpalue/main/en-us/Administration/Extensions/Eventnews.html)
-      > (release dependent).
 
    2. Add repository for site package
       ```
@@ -92,21 +94,21 @@ It uses pizpalue version 12 (bootstrap 5) and TYPO3 version 11.
       }
       ```
 
-6. **Finalize installation**
+   4. **Finalize installation**
 
-   After modifying the composer configuration finalize the installation:
-   ```
-   composer finalize-installation
-   ```
+      After modifying the composer configuration finalize the installation:
+      ```
+      composer finalize-installation
+      ```
 
-7. **Update root template record**
+   5. **Update root template record**
 
-   Not loaded extensions might still have their static template referenced in the root template record. This can result
-   in incorrect rendering issues. To update the root template record open and save the template record on the root page.
+      Not loaded extensions might still have their static template referenced in the root template record. This can result
+      in incorrect rendering issues. To update the root template record open and save the template record on the root page.
 
-8. **Update the core regularly**
+   6. **Update the core regularly**
 
-   To keep the core up to date a cron job might be defined. A possible command could be as following:
-   ```
-   cd ~/httpdocs/pizpalue && composer core-update
-   ```
+      To keep the core up to date a cron job might be defined. A possible command could be as following:
+      ```
+      cd ~/httpdocs/pizpalue && composer core-update
+      ```
