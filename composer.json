@@ -12,7 +12,7 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "require": {
-    "buepro/typo3-pizpalue-distribution": "~3.4.0"
+    "buepro/typo3-pizpalue-distribution": "^4.0.0"
   },
   "scripts": {
     "core-update-proc": [
