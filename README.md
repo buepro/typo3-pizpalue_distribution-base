@@ -49,9 +49,8 @@ It uses pizpalue version 13 (bootstrap 5) and TYPO3 version 11.
 
    1. Define packages
 
-      To have more control maintaining the site the composer configuration might be adjusted according the actual
-      requirements. For this replace the dependency from `"buepro/typo3-pizpalue-distribution"` with the required
-      packages:
+      Remove the dependency to `"buepro/typo3-pizpalue-distribution"` and all packages not required by the
+      site:
       ```
       "buepro/typo3-container-elements": "^3.0.0",
       "buepro/typo3-easyconf": "^1.0.1",
@@ -68,8 +67,8 @@ It uses pizpalue version 13 (bootstrap 5) and TYPO3 version 11.
       "typo3/cms-recycler": "^11.5",
       "typo3/cms-redirects": "^11.5"
       ```
-      > NOTE: Just add the needed packages. In many projects just `buepro/typo3-pizpalue` and
-      `buepro/typo3-container-elements` are used.
+      > NOTE: Just use the needed packages. In many projects just `buepro/typo3-pizpalue` and
+      `buepro/typo3-container-elements` are required.
 
    2. Add repository for site package
       ```
