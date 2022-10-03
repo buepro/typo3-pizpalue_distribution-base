@@ -9,7 +9,7 @@
     },
     "sort-packages": true
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "prefer-stable": true,
   "require": {
     "buepro/typo3-container-elements": "^4.0.0",
