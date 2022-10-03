@@ -3,7 +3,7 @@
 This composer package serves as a base to start new [typo3](https://typo3.org) projects based on
 [pizpalue distribution](https://extensions.typo3.org/extension/pizpalue_distribution/).
 
-It uses pizpalue version 13 (bootstrap 5) and TYPO3 version 11.
+It uses pizpalue version 14 and TYPO3 version 11.
 
 ## Quick start
 
@@ -50,23 +50,7 @@ It uses pizpalue version 13 (bootstrap 5) and TYPO3 version 11.
    1. Define packages
 
       Remove the dependency to `"buepro/typo3-pizpalue-distribution"` and all packages not required by the
-      site:
-      ```
-      "buepro/typo3-container-elements": "^3.0.0",
-      "buepro/typo3-easyconf": "^1.0.1",
-      "buepro/typo3-pizpalue": "^13.0.0",
-      "buepro/typo3-timelog": "^1.7.0",
-      "buepro/typo3-user-pizpalue": "^3.0.0",
-      "friendsoftypo3/tt-address": "^6.0.1",
-      "georgringer/eventnews": "5.0.0",
-      "georgringer/news": "^9.4.0",
-      "typo3/cms-base-distribution": "^11.5",
-      "typo3/cms-core": "^11.5",
-      "typo3/cms-indexed-search": "^11.5",
-      "typo3/cms-lowlevel": "^11.5",
-      "typo3/cms-recycler": "^11.5",
-      "typo3/cms-redirects": "^11.5"
-      ```
+      site.
       > NOTE: Just use the needed packages. In many projects just `buepro/typo3-pizpalue` and
       `buepro/typo3-container-elements` are required.
 
