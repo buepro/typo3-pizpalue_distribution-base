@@ -59,7 +59,7 @@ It uses pizpalue version 14 and TYPO3 version 11.
       "repositories": [
          {
             "type": "vcs",
-            "url": "../../git/user_pizpalue.git"
+            "url": "../../git/typo3-user_pizpalue.git"
          }
       ],
       ```
@@ -72,7 +72,7 @@ It uses pizpalue version 14 and TYPO3 version 11.
       ```
       "config": {
         "platform": {
-          "php": "8.0.19"
+          "php": "8.1.9"
         }
       }
       ```
